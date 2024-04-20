@@ -1,0 +1,7 @@
+进入虚拟环境
+cd env/venv
+cd ./Script/
+cd activate
+
+下载库
+pip install flask
