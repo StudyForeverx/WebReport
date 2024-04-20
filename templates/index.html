@@ -24,8 +24,9 @@
 				<li><a href="http://127.0.0.1:5000/phoneus">联系我们</a></li>
 			</ul>
 		</div>
-		<div class="signup">
-             	<button onclick="getLogin()">Sign Up</button>
+		<div>
+			<button class="signup" onclick="getLogin()" id="loginButton">Sign Up</button>
+
 		</div>
 	</div>
 	<div class="body">
@@ -69,17 +70,26 @@
 		<a href="#">Cookies</a>
 		<a href="#">Complaints</a>
 	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        function getLogin(){
-            //alert("dianijile")
-            var username = prompt("请输入用户名：")
-            var password = prompt("请输入密码：")
-            if (username == 1111 && password == 2222){
-                alert("登录成功")
-            }else{
-                alert("用户名或密码错误")
-            }
-        }
+        $(document).ready(function(){
+            $("#loginButton").click(function(){
+                var username = prompt("请输入您的用户名：");
+                var password = prompt("请输入您的密码：");
+
+                // 检查用户名和密码是否为空
+                if(username == 1111 && password == 2222){
+                    // 假设登录成功，替换按钮为用户信息
+                    alert("登陆成功")
+                    var userInfo = "欢迎，" + username + "！"; // 拼接用户信息
+                    var userInfoElement = $("<div>").text(userInfo); // 创建包含用户信息的新元素
+                    $("#loginButton").replaceWith(userInfoElement); // 替换登录按钮为用户信息元素
+                } else {
+                    alert("用户名和密码不能为空！");
+                }
+            });
+        });
+
     </script>
 </body>
 </html>
