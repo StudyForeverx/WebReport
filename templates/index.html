@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Travel Website</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../static/style.css">
+
+
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop src="../static/front page.mp4"></video>
+    </div>
+	<div class="navbar">
+		<div class="logo">
+			<h1>粤港澳大湾区旅游指南</h1>
+		</div>
+		<div class="menu">
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">服务</a></li>
+				<li><a href="#">地区</a></li>
+				<li><a href="http://127.0.0.1:5000/phoneus">联系我们</a></li>
+			</ul>
+		</div>
+		<div class="signup">
+             	<button onclick="getLogin()">Sign Up</button>
+		</div>
+	</div>
+	<div class="body">
+
+		<div class="heading">
+			<h1>Travel With Us</h1>
+			<br>
+			<p>Welcome to the Guangdong-Hong Kong-Macao Greater Bay Area, a booming and dynamic region! </p>
+			<br>
+			<br>
+			<a href="#">Learn More</a>
+		</div>
+		<div class="tours">
+			<div class="places">
+				<h2>Macau</h2>
+				<img src="../static/img_1.png" style="width: 300px; height: 250px; border-radius: 12px;">
+				<br>
+				<br>
+				<a href="#">Learn More</a>
+			</div>
+			<div class="places">
+				<h2>Hong Kong</h2>
+				<img src="../static/img_2.png" style="width: 300px; height: 250px; border-radius: 12px;">
+				<br>
+				<br>
+				<a href="#">Learn More</a>
+			</div>
+			<div class="places">
+				<h2>Grang Zhou</h2>
+				<img src="../static/img.png" style="width: 300px; height: 250px; border-radius: 12px;">
+				<br>
+				<br>
+				<a href="#">Learn More</a>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<a href="#">Copyright</a>
+		<a href="#">Terms and Conditions</a>
+		<a href="#">Privacy Policy</a>
+		<a href="#">Cookies</a>
+		<a href="#">Complaints</a>
+	</div>
+    <script>
+        function getLogin(){
+            //alert("dianijile")
+            var username = prompt("请输入用户名：")
+            var password = prompt("请输入密码：")
+            if (username == 1111 && password == 2222){
+                alert("登录成功")
+            }else{
+                alert("用户名或密码错误")
+            }
+        }
+    </script>
+</body>
+</html>
