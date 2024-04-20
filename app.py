@@ -13,20 +13,12 @@ def index():
 def phoneus():
     return render_template('phoneus.html')
 
-# @app.route('/login', methods=['POST'])
-# def login():
-#     data = json.loads(request.get_data(as_text=True))
-#     print(data)
-#     if data['username'] == '1111' and data['password'] == '2222':
-#         return 'success'
-#     else:
-#         return 'error'  # 字典
 
 from flask import Flask, request, jsonify
 
 @app.route('/login', methods=['POST'])
 def login():
-    data = request.get_json()  # 更简单的方式来解析 JSON 数据
+    data = json.loads(request.get_data(as_text=True))  # 更简单的方式来解析 JSON 数据
     print(data)
     if str(data['username']) == '1111' and str(data['password']) == '2222':
         return jsonify({'success': True}), 200  # 返回 JSON 响应，并显示操作成功
@@ -38,6 +30,9 @@ def register():
     data = json.loads(request.get_data(as_text=True)) # 更简单的方式来解析 JSON 数据
     print(data)
     return jsonify({'success': True}), 200
+@app.route('/guangzhou', methods=['GET'])
+def goguangzhou():
+    return render_template('guangzhou.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

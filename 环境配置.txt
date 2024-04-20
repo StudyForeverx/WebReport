@@ -1,7 +1,7 @@
 进入虚拟环境
-cd env/venv
+cd venv
 cd ./Script/
-activated
+activate
 
 下载库
 pip install flask
