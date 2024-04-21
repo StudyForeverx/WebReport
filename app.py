@@ -30,6 +30,9 @@ def register():
     data = json.loads(request.get_data(as_text=True)) # 更简单的方式来解析 JSON 数据
     print(data)
     return jsonify({'success': True}), 200
+@app.route('/guangzhou', methods=['GET'])
+def goguangzhou():
+    return render_template('guangzhou.html')
 
 # @app.route('/hongkong', methods=['GET'])
 # def gohongkong():
