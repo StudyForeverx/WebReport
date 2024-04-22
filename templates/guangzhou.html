@@ -1,10 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>GUANGZHOU</title>
+    <title>广州旅游指南</title>
+    <style>
+        body {
+            background-image: url('static/广州image/backg.jpg');  /* 背景图片 */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;  /* 页面高度 */
+            overflow: hidden;  /* 防止滚动条 */
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.7);  /* 半透明黑色 */
+            padding: 10px;
+            position: sticky;  /* 导航栏固定在顶部 */
+            top: 0;
+            z-index: 100;  /* 确保导航栏在最上层 */
+            display: flex;  /* 使用flex布局 */
+            justify-content: flex-start;  /* 导航栏内容靠左 */
+        }
+
+        /* 导航链接样式 */
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;  /* 链接的内边距 */
+            transition: background-color 0.3s;  /* 平滑过渡 */
+        }
+
+        /* 导航栏鼠标悬停效果 */
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.3);  /* 鼠标悬停 */
+        }
+
+        /* 图片链接样式 */
+        .image-link {
+            cursor: pointer;  /* 鼠标悬停时变为手形 */
+            transition: transform 0.3s;  /* 平滑过渡 */
+            text-decoration: none;  /* 无文本装饰 */
+        }
+
+        /* 鼠标悬停时图片的缩放效果 */
+        .image-link img {
+            width: 250px;  /* 图片宽度 */
+            height: 350px;  /* 图片高度 */
+            border-radius: 10px;  /* 圆角 */
+            transition: transform 0.3s;  /* 平滑过渡 */
+        }
+
+        /* 鼠标悬停时的放大效果 */
+        .image-link img:hover {
+            transform: scale(1.1);  /* 图片放大效果 */
+        }
+
+        /* 图片容器，确保图片在相对中心 */
+        .image-container {
+            display: inline-block;
+            text-align: center;
+            position: absolute;  /* 绝对定位 */
+            top: 30%;  /* 水平中心 */
+            transform: translateY(-50%);  /* 垂直居中 */
+        }
+
+        /* 风景图片的位置 */
+        .scenery {
+            left: 25%;/* 向左偏移 */
+            transform: translateY(20px);
+        }
+
+        /* 美食图片的位置 */
+        .food {
+            right: 25%;  /* 向右偏移 */
+            transform: translateY(20px);
+        }
+
+        /* 按钮样式 */
+        .button {
+            padding: 15px;  /* 内边距 */
+            font-size: 18px;  /* 字体大小 */
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+            background-color: rgba(52, 95, 238, 0);  /* 半透明背景 */
+            color: white;
+            border: 2px solid rgba(52, 238, 60, 0);  /* 边框 */
+            display: block;  /* 按钮占用整行 */
+            margin-top: 10px;  /* 图片和按钮之间的间距 */
+        }
+
+        /* 鼠标悬停时按钮的变化 */
+        .button:hover {
+            background-color: rgba(52, 145, 238, 0.7);  /* 增加透明度 */
+        }
+
+    </style>
 </head>
 <body>
-<div>hello world</div>
+<!-- 导航栏 -->
+<div class="navbar">
+    <!-- 导航栏内容靠左 -->
+    <a href="#scenery" class="scroll-link">风景</a>
+    <a href="#food" class="scroll-link">美食</a>
+</div>
+
+<div class="content">
+    <!-- 风景图片容器 -->
+    <div class="image-container scenery" id="scenery">
+        <!-- 风景图片 -->
+        <a href="/guangzhou/gz-fengjing" class="image-link">
+            <img src="/static/广州image/fengjing.png" alt="风景图片">
+        </a>
+
+        <!-- 风景按钮，放在图片下方 -->
+        <a href="/guangzhou/gz-fengjing" class="button">风景</a>
+    </div>
+
+    <!-- 美食图片容器 -->
+    <div class="image-container food" id="food">
+        <!-- 美食图片 -->
+        <a href="/guangzhou/gz-meishi" class="image-link">
+            <img src="/static/广州image/meishi.png" alt="美食图片">
+        </a>
+
+        <!-- 美食按钮，放在图片下方 -->
+        <a href="/guangzhou/gz-meishi" class="button">美食</a>
+    </div>
+</div>
+
+<!-- JavaScript to add scroll effect -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var scrollLinks = document.querySelectorAll('.scroll-link');
+
+        scrollLinks.forEach(function(link) {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();  // 防止默认跳转行为
+                var targetId = this.getAttribute('href').substring(1);  // 获取目标的ID
+                var targetElement = document.getElementById(targetId);
+
+                // 使用平滑滚动
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // 页面加载时显示加载动画
+        var loadingOverlay = document.createElement('div');
+        loadingOverlay.style.position = 'fixed';
+        loadingOverlay.style.top = '0';
+        loadingOverlay.style.left = '0';
+        loadingOverlay.style.width = '100%';
+        loadingOverlay.style.height = '100%';
+        loadingOverlay.style.backgroundColor = 'rgba(0,0,0,0.93)';
+        loadingOverlay.style.color = 'white';
+        loadingOverlay.style.textAlign = 'center';
+        loadingOverlay.style.display = 'flex';
+        loadingOverlay.style.justifyContent = 'center';
+        loadingOverlay.style.alignItems = 'center';
+        loadingOverlay.innerText = 'Loading...(假的^^)';  // 加载提示
+
+        document.body.appendChild(loadingOverlay);  // 添加加载动画
+
+        // 在页面加载完毕后移除加载动画
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.body.removeChild(loadingOverlay);
+            }, 1500);  // 延迟移除
+        });
+    });
+</script>
+
 </body>
 </html>

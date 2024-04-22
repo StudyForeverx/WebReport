@@ -40,6 +40,12 @@ def register():
 @app.route('/guangzhou', methods=['GET'])
 def goguangzhou():
     return render_template('guangzhou.html')
+@app.route('/guangzhou/gz-fengjing', methods=['GET'])
+def goguangzhoufengjing():
+    return render_template('gz-fengjing.html')
+@app.route('/guangzhou/gz-meishi', methods=['GET'])
+def goguangzhoumeihshi():
+    return render_template('gz-meishi.html')
 
 
 if __name__ == '__main__':
