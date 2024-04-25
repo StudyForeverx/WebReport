@@ -46,6 +46,9 @@ def goguangzhoufengjing():
 @app.route('/guangzhou/gz-meishi', methods=['GET'])
 def goguangzhoumeihshi():
     return render_template('gz-meishi.html')
+@app.route('/guangzhou/gz-fengjing/guangzhou-map', methods=['GET'])
+def goguangzhoufengjingmap():
+    return render_template('guangzhou-map.html')
 
 
 if __name__ == '__main__':

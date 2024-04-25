@@ -2,31 +2,101 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>广州风景</title>
+    <title>广州风景名胜表格</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
+            background-color: #f5f5f5;
             margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #f8f8f8;
             padding: 20px;
         }
-        h1 {
-            color: #333;
+
+        /* 表格样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;  /* 去掉单元格之间的间隔 */
+            background-color: white;
         }
-        p {
-            color: #666;
-            font-size: 18px;
+
+        /* 表头样式 */
+        th {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            border-bottom: 2px solid #ddd;  /* 表头下方的分割线 */
+        }
+
+        /* 表格单元格样式 */
+        td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;  /* 单元格下方的分割线 */
+        }
+
+        /* 图片样式 */
+        img {
+            width: 100px;  /* 图片宽度 */
+            height: auto;  /* 自适应高度 */
+            border-radius: 5px;  /* 图片圆角 */
+        }
+
+        /* 表格悬停效果 */
+        tr:hover {
+            background-color: #f1f1f1;  /* 鼠标悬停时的背景颜色 */
+        }
+
+        /* 表格标题 */
+        .table-title {
+            text-align: center;
+            font-size: 24px;
+            color: #4CAF50;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-<header>
-    <h1>广州的风景</h1>
-    <p>广州有很多著名的景点，如白云山、陈家祠和广州塔。</p>
-</header>
+
+<!-- 表格标题 -->
+<div class="table-title">广州风景名胜</div>
+
+<!-- 风景名胜表格 -->
+<table>
+    <thead>
+    <tr>
+        <th>地名</th>
+        <th>图片</th>
+        <th>简介</th>
+        <th>历史文化</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><a href="https://maps.google.com/?q=白云山,广州" target="_blank">白云山</a></td>  <!-- 链接到Google Maps -->
+        <td><img src="static/广州image/白云山.jpg" alt="白云山"></td>
+        <td>白云山位于广州，是登山健身和观光的好去处，拥有丰富的自然景观。</td>
+        <td>白云山有着悠久的历史，被誉为"羊城第一秀"，是广州的标志性景点之一。</td>
+    </tr>
+    <tr>
+        <td><a href="https://maps.google.com/?q=广州塔,广州" target="_blank">广州塔</a></td>  <!-- 链接到Google Maps -->
+        <td><img src="static/广州image/广州塔.jpg" alt="广州塔"></td>
+        <td>广州塔是广州的地标之一，塔高600多米，是一个集娱乐和观光于一体的旅游胜地。</td>
+        <td>广州塔又称“小蛮腰”，建于21世纪初，象征着现代广州的崛起与发展。</td>
+    </tr>
+    <tr>
+        <td><a href="https://maps.google.com/?q=沙面,广州" target="_blank">沙面</a></td>  <!-- 链接到Google Maps -->
+        <td><img src="static/广州image/沙面.jpg" alt="沙面"></td>
+        <td>沙面是广州的历史文化街区，拥有大量欧洲风格的建筑，是拍照和休闲的好地方。</td>
+        <td>沙面曾是广州的租界区，保留了许多19世纪的欧式建筑，见证了广州的历史演变。</td>
+    </tr>
+    <tr>
+        <td><a href="https://maps.google.com/?q=中山纪念堂,广州" target="_blank">中山纪念堂</a></td>  <!-- 链接到Google Maps -->
+        <td><img src="../static/广州image/中山纪念堂.jpg" alt="中山纪念堂"></td>
+        <td>中山纪念堂是为了纪念孙中山而建，是广州的重要历史景点之一。</td>
+        <td>中山纪念堂建于1930年代，象征着中国近代历史的重要人物孙中山的伟大贡献。</td>
+    </tr>
+    </tbody>
+</table>
+
 </body>
 </html>

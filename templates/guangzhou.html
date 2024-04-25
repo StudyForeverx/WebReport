@@ -14,6 +14,37 @@
             font-family: Arial, sans-serif;
             height: 100vh;  /* 页面高度 */
             overflow: hidden;  /* 防止滚动条 */
+            animation: fadeIn 2s;  /* 渐入效果 */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes textFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .intro-text {
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            padding: 20px;
+            animation: textFadeIn 1.5s ease-out forwards;
+            visibility: hidden;  /* 初始设置为不可见 */
+            margin-top: 50px;  /* 与导航栏的间距 */
         }
 
         /* 导航栏样式 */
@@ -38,6 +69,7 @@
         /* 导航栏鼠标悬停效果 */
         .navbar a:hover {
             background-color: rgba(255, 255, 255, 0.3);  /* 鼠标悬停 */
+            transform: scale(1.1);  /* 放大效果 */
         }
 
         /* 图片链接样式 */
@@ -57,7 +89,8 @@
 
         /* 鼠标悬停时的放大效果 */
         .image-link img:hover {
-            transform: scale(1.1);  /* 图片放大效果 */
+            transform: scale(1.2);  /* 图片放大效果 */
+            box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.6);  /* 添加阴影 */
         }
 
         /* 图片容器，确保图片在相对中心 */
@@ -98,6 +131,7 @@
         /* 鼠标悬停时按钮的变化 */
         .button:hover {
             background-color: rgba(52, 145, 238, 0.7);  /* 增加透明度 */
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);  /* 添加阴影 */
         }
 
     </style>
@@ -106,8 +140,13 @@
 <!-- 导航栏 -->
 <div class="navbar">
     <!-- 导航栏内容靠左 -->
-    <a href="#scenery" class="scroll-link">风景</a>
-    <a href="#food" class="scroll-link">美食</a>
+    <a href="/guangzhou/gz-fengjing" class="scroll-link">风景</a>
+    <a href="/guangzhou/gz-meishi" class="scroll-link">美食</a>
+</div>
+
+<!-- 新增文本区块 -->
+<div class="intro-text">
+    欢迎来到广州，探索这座充满活力的城市！
 </div>
 
 <div class="content">
@@ -134,23 +173,30 @@
     </div>
 </div>
 
-<!-- JavaScript to add scroll effect -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // 页面加载完成后，显示文本区块
+        var introText = document.querySelector('.intro-text');
+        introText.style.visibility = 'visible';
+
         var scrollLinks = document.querySelectorAll('.scroll-link');
 
         scrollLinks.forEach(function(link) {
             link.addEventListener('click', function(event) {
-                event.preventDefault();  // 防止默认跳转行为
-                var targetId = this.getAttribute('href').substring(1);  // 获取目标的ID
-                var targetElement = document.getElementById(targetId);
+                var href = this.getAttribute('href');
 
-                // 使用平滑滚动
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop,
-                        behavior: 'smooth'
-                    });
+                if (href.startsWith("#")) {
+                    event.preventDefault();  // 仅对内部滚动链接防止默认行为
+                    var targetId = href.substring(1);  // 获取目标的ID
+                    var targetElement = document.getElementById(targetId);
+
+                    // 使用平滑滚动
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
                 }
             });
         });
@@ -165,10 +211,10 @@
         loadingOverlay.style.backgroundColor = 'rgba(0,0,0,0.93)';
         loadingOverlay.style.color = 'white';
         loadingOverlay.style.textAlign = 'center';
-        loadingOverlay.style.display = 'flex';
-        loadingOverlay.style.justifyContent = 'center';
-        loadingOverlay.style.alignItems = 'center';
-        loadingOverlay.innerText = 'Loading...(假的^^)';  // 加载提示
+        loadingOverlay.style.display= 'flex';
+        loadingOverlay.style.justifyContent= 'center';
+        loadingOverlay.style.alignItems= 'center';
+        loadingOverlay.innerText = 'Loading...(假的^^)';
 
         document.body.appendChild(loadingOverlay);  // 添加加载动画
 
@@ -176,7 +222,35 @@
         window.addEventListener('load', function() {
             setTimeout(function() {
                 document.body.removeChild(loadingOverlay);
-            }, 1500);  // 延迟移除
+            }, 1500);  // 延迟移除加载动画
+        });
+
+        // 增加滚动动画效果
+        window.addEventListener('scroll', function() {
+            var contentElements = document.querySelectorAll('.content .image-container');
+
+            contentElements.forEach(function(element) {
+                var rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 50) {
+                    element.style.transition = 'opacity 0.5s';
+                    element.style.opacity = 1;
+                } else {
+                    element.style.transition = 'opacity 0.5s';
+                    element.style.opacity = 0;
+                }
+            });
+        });
+
+        // 添加导航栏悬停时的效果
+        var navbar = document.querySelector('.navbar');
+        navbar.addEventListener('mouseenter', function() {
+            navbar.style.transition = 'background-color 0.5s';
+            navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';  // 增加透明度
+        });
+
+        navbar.addEventListener('mouseleave', function() {
+            navbar.style.transition = 'background-color 0.5s';
+            navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';  // 恢复透明度
         });
     });
 </script>
