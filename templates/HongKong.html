@@ -1,10 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Hongkong</title>
+    <title>Hong Kong</title>
+    <link rel="stylesheet" href="../static/HongKong/style.css">
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
+
 <body>
-<h1></h1>>
+
+    <div class="container">
+
+        <div class="city-logo">
+            <img src="../static/HongKong/city-logo.png">
+            <p id="welcome-message"> </p>
+        </div>
+
+
+        <div class="video-background">
+            <video autoplay muted loop src="../static/HongKong/video1.mp4"></video>
+
+
+            <div class="overlap-background">
+                <h1 style="
+                    font-size:50px;">EXPERIENCE HONG KONG
+                    ASIA'S WORLD CITY</h1> <!-- 半透明背景上的文字 -->
+
+                <hr>
+
+                <p id="overlap-message">
+                </p>
+
+            </div>
+
+            <div class="main">
+                <div class="item">
+                    <div class="info">
+                        <h3>MAP</h3> <!-- 标题 -->
+                        <p>by lesen <a href="#map-page">view on more</a></p> <!-- 链接文本 -->
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="info">
+                        <h3>Attraction</h3> <!-- 标题 -->
+                        <p>by lesen <a href="#attraction-page">view on more</a></p> <!-- 链接文本 -->
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="info">
+                        <h3>Food</h3> <!-- 标题 -->
+                        <p>by lesen <a href="#food-page">view on more</a></p> <!-- 链接文本 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="map-page" id="map-page">
+            <h2>This is a map page.</h2>
+        </div>
+        <div class="attraction-page" id="attraction-page">
+            <div class="page-content">
+                <h2>This is a attraction page.</h2>
+                <p>3224234234234234234234234234234</p>
+                <a href="/hongkong/hongkong-attraction">Get started</a>
+            </div>
+        </div>
+        <div class="food-page" id="food-page">
+            <div class="page-content">
+                <h2>This is a food page.</h2>
+                <p>Food description goes here.</p>
+                <a href="#">Learn more</a>
+            </div>
+        </div>
+
+    </div>
+
+    <button id="btn">
+        <span class="material-symbols-outlined">
+            arrow_upward
+        </span>
+    </button>
+
+
+    <script>
+        //打字特效js
+        var typed = new Typed('#welcome-message',
+            {
+                strings: ['Welcome To Hong Kong!'],
+                typespeed: 100000,
+            });
+
+
+
+        var typed = new Typed('#overlap-message',
+            {
+                strings: ["What makes Hong Kong a dynamic center for successful businesses as Asia's world city? It is the combination of factors such as location, the rule of law, well-established professional services, a thriving start-up ecosystem, a well-educated and industrious workforce, and much more that form the essence of Brand Hong Kong."
+                ],
+                typespeed: 100,
+                typeba: 100,
+                loop: true,
+
+            });
+
+
+        // const btn = document.getElementById('btn');
+        // btn.addEventListener('click', () => {
+        //     $("html,body").animate({ scrollTop: 0 }, "slow");
+        // });
+
+
+
+    </script>
+
 </body>
+
 </html>

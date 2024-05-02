@@ -25,7 +25,7 @@ def login():
     print(data)
     con = UserServerController()
     result = con.findloginServerStatus(data)
-    if str(data['username']) == '1111' and str(data['password']) == '2222':
+    if result:
         return jsonify({'success': True}), 200  # 返回 JSON 响应，并显示操作成功
     else:
         return jsonify({'success': False, 'message': 'Invalid credentials'}), 200  # 返回错误信息和401状态码
@@ -37,6 +37,7 @@ def register():
     con = UserServerController()
     result = con.adduserServerStatus(data)
     return jsonify({'success': True}), 200
+
 @app.route('/guangzhou', methods=['GET'])
 def goguangzhou():
     return render_template('guangzhou.html')
@@ -50,6 +51,13 @@ def goguangzhoumeihshi():
 def goguangzhoufengjingmap():
     return render_template('guangzhou-map.html')
 
+@app.route('/hongkong', methods=['GET'])
+def gohongkong():
+    return render_template('HongKong.html')
+
+@app.route('/hongkong/hongkong-attraction', methods=['GET'])
+def goHongKongAttraction():
+    return render_template('hongkong-attraction.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

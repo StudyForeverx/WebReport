@@ -1,0 +1,336 @@
+                .city-logo {
+                    padding: 20px;
+                    /* 内边距 */
+                    border-bottom: 1px solid #ccc;
+                    /* 底部边框 */
+                    background-size: cover;
+                    background-position: center;
+                    scroll-snap-align: start;
+
+                }
+
+                .city-logo img {
+                    height: 100px;
+                    /* 设置图像高度 */
+                    display: inline-block;
+                    /* 使其与文本同一行 */
+                    vertical-align: middle;
+                    /* 垂直居中 */
+                }
+
+                .city-logo p {
+                    display: inline-block;
+                    /* 保持在同一行 */
+                    margin-left: 200px;
+                    /* 与图像之间的间距 */
+                    vertical-align: middle;
+                    /* 与图像垂直居中 */
+                    font: bold 40px Georgia, serif;
+                    /* 字体设置，使用 Georgia 字体 */
+                }
+
+                /* 为视频背景设置样式 */
+                .video-background {
+                    position: relative;
+                    /* 与其他部分分离 */
+                    height: 100vh;
+                    /* 占据整个视窗高度 */
+                    /* background-color: black; */
+                    /* 默认背景颜色 */
+                    overflow: hidden;
+                    scroll-snap-align: start;
+
+                }
+
+                /* 视频的样式 */
+                .video-background video {
+                    width: 100%;
+                    /* 视频填充整个宽度 */
+                    height: auto;
+                    /* 让视频自动调整高度 */
+                    object-fit: cover;
+                    /* 视频填充容器 */
+                }
+
+                /* 覆盖背景样式 */
+                .overlap-background {
+                    position: absolute;
+                    top: 0;
+                    left: 60px;
+                    /* 设置与左侧的距离 */
+                    width: 30%;
+                    /* 宽度调整 */
+                    height: 94.8%;
+                    bottom: 0;
+                    /* 覆盖整个高度 */
+                    background-color: rgba(0, 0, 0, 0.5);
+                    /* 半透明黑色背景 */
+                    color: white;
+                    /* 文字颜色 */
+                    padding: 20px;
+                    /* 内边距 */
+                }
+
+                .overlap-background p {
+                    font-size: 17px;
+                    line-height: 1.5;
+                    margin-top: 70px;
+                }
+
+                .main {
+                    position: absolute;
+                    /* 绝对定位 */
+                    bottom: 20px;
+                    /* 距离底部 20px */
+                    right: 20px;
+                    /* 距离右侧 20px */
+                    z-index: 2;
+                    /* 确保在视频背景的上层 */
+                    display: flex;
+                    /* 使用 flex 布局 */
+                    flex-direction: row;
+                    /* 子元素水平排列 */
+                    gap: 10px;
+                    /* 子元素之间的间距 */
+                }
+
+                .item {
+                    position: relative;
+                    width: 220px;
+                    height: 220px;
+                    margin: 10px;
+                    background: url(map.jpg) no-repeat;
+                    background-size: cover;
+                    /* 确保背景图片填满容器 */
+                    border-radius: 50%;
+                    box-shadow: inset 0 0 0 16px rgba(255, 255, 255, .6),
+                        0 1px 2px rgba(0, 0, 0, .1);
+                    transition: all .4s ease-in-out .4s;
+
+                }
+
+                .item:nth-child(2) {
+                    background: url(Attraction.jpg) no-repeat;
+                    background-size: cover;
+                }
+
+                .item:nth-child(3) {
+                    background: url(food.jpg) no-repeat;
+                    background-size: cover;
+                }
+
+                .info {
+                    opacity: 0;
+                    transform: scale(0);
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(63, 147, 147, 0.8);
+                    border-radius: 50%;
+                    text-align: center;
+                    transition: all .4s ease-in-out .4s;
+                }
+
+                .info h3 {
+                    height: 100px;
+                    font-size: 20px;
+                    color: #fff;
+                    margin: 0 30px;
+                    padding-top: 45px;
+                    text-transform: uppercase;
+                }
+
+                .info p {
+                    opacity: 0;
+                    font-size: 12px;
+                    color: #fff;
+                    font-style: italic;
+                    margin: 0 30px;
+                    padding-top: 10px;
+                    border-top: 1px solid rgba(255, 255, 255, .5);
+                    transition: all .4s ease-in-out .5s;
+                }
+
+                .info a {
+                    font-size: 10px;
+                    display: block;
+                    color: #fff;
+                    font-size: normal;
+                }
+
+                .item:hover {
+                    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .1), 0 1px 2px rgba(0, 0, 0, .1);
+                }
+
+                .item:hover .info {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+
+                .item:hover .info p {
+                    opacity: 1;
+                }
+
+                .info p a:hover {
+                    color: chocolate
+                }
+
+                .container {
+                    width: 100%;
+                    height: 100vh;
+                    overflow-y: auto;
+                    scroll-snap-type: y mandatory;
+                }
+
+                .map-page {
+                    background-image: linear-gradient(180deg, #2af598 0%, #009efd 100%);
+
+                    height: 100vh;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 50px;
+                    color: #fff;
+                    scroll-snap-align: start;
+
+                }
+
+                .attraction-page {
+                    margin: 0;
+                    padding: 0;
+                    font-family: "monteserrat", sans-serif;
+                    scroll-snap-align: start;
+                }
+
+                .attraction-page {
+                    width: 100%;
+                    height: 100vh;
+                    background: #000;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .attraction-page::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: url('tourist.jpg') no-repeat;
+                    background-size: cover;
+                    opacity: .3;
+                    animation: anim 25s linear infinite;
+                }
+
+                @keyframes anim {
+                    50% {
+                        transform: scale(2);
+                    }
+
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+
+                .page-content {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 1;
+                    width: 100%;
+                    max-width: 800px;
+                    text-align: center;
+                    padding: 0 40px;
+                    box-sizing: border-box;
+                    margin-top: 20px;
+                }
+
+                .page-content h2 {
+                    color: #ff7979;
+                    text-transform: uppercase;
+                    font-size: 50px;
+                    font-weight: 900;
+                    margin-bottom: 20px;
+                }
+
+                .page-content p {
+                    color: #fff;
+                    margin-bottom: 20px;
+                }
+
+                .page-content a {
+                    display: inline-block;
+                    text-decoration: none;
+                    color: #ede7ee;
+                    border: 2px solid #f0eeee;
+                    text-transform: uppercase;
+                    padding: 10px 20px;
+                    transition: 0.4s linear;
+                }
+
+                .page-content a:hover {
+                    color: #fff;
+                    background: #ff7979;
+                }
+
+
+                .food-page {
+                    width: 100%;
+                    height: 100vh;
+                    position: relative;
+                    overflow: hidden;
+                    background: rgba(13, 13, 13, 0.1);
+                    scroll-snap-align: start;
+                }
+
+                .food-page::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: url('4kfood.jpg') no-repeat;
+                    background-size: cover;
+                    opacity: .3;
+                    animation: anim 25s linear infinite;
+                }
+
+                html,
+                body {
+                    height: 100%;
+                    /* 限制高度为视口高度 */
+                    margin: 0;
+                    /* 移除默认边距 */
+                    overflow: auto;
+                    /* 防止在 body 级别出现滚动条 */
+                    scroll-behavior: smooth;
+                }
+
+                #btn {
+                    position: fixed;
+                    /* 固定定位 */
+                    bottom: 16px;
+                    /* 距离页面底部 16px */
+                    right: 20px;
+                    /* 距离页面右侧 16px */
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    /* 圆形按钮 */
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: white;
+                    color: black;
+                    font-size: 32px;
+                    /* 图标的大小 */
+                    z-index: 100;
+                    /* 确保在前面 */
+                    transition: all 0.3s;
+                    /* 平滑过渡 */
+                    cursor: pointer;
+                    scroll-snap-align: start;
+                }

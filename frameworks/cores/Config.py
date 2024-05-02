@@ -10,7 +10,7 @@ class Config:
         sys_platform = platform.platform().lower()
         print(sys_platform)
         if "windows" in sys_platform:
-            cfgpath = "E:\\the-debuggers 2\\configs\\machine.ini"
+            cfgpath = "D:\\WebReport\\configs\\machine.ini"
         else:
             cfgpath = "/root/python/code/config/userserver_config.ini"
 

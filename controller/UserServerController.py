@@ -32,12 +32,3 @@ class UserServerController:
             result = True
         return result
 
-    def orderhotelServerStatus(self, status_data):
-        model = CommonDb('orderinfo')
-        consequence = model.selectAll(f"name='{status_data['name']}' and phone='{status_data['phone']}' and IDCard='{status_data['IDCard']}'")
-        if consequence:
-            result = False
-            print('已有此用户，无法添加')
-        else:
-            result = model.add(status_data)
-        return result
