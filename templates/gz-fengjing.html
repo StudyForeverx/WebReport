@@ -1,102 +1,256 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>广州风景名胜表格</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+        * {
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* 表格样式 */
-        table {
+        body {
+            background: #eaeaea;
+            overflow: hidden;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1000px;
+            height: 600px;
+            background: #f5f5f5;
+            box-shadow: 0 30px 50px #dbdbdb;
+        }
+
+        .container .slide .item {
+            width: 200px;
+            height: 300px;
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            border-radius: 20px;
+            box-shadow: 0 30px 50px #505050;
+            background-position: 50% 50%;
+            background-size: cover;
+            display: inline-block;
+            transition: 0.5s;
+        }
+
+        .slide .item:nth-child(1),
+        .slide .item:nth-child(2) {
+            top: 0;
+            left: 0;
+            transform: translate(0, 0);
+            border-radius: 0;
             width: 100%;
-            border-collapse: collapse;  /* 去掉单元格之间的间隔 */
-            background-color: white;
+            height: 100%;
         }
 
-        /* 表头样式 */
-        th {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px;
+        .slide .item:nth-child(3) {
+            left: 50%;
+        }
+
+        .slide .item:nth-child(4) {
+            left: calc(50% + 220px);
+        }
+
+        .slide .item:nth-child(5) {
+            left: calc(50% + 440px);
+        }
+
+        .slide .item:nth-child(6) {
+            left: calc(50% + 660px);
+        }
+
+        .item .content {
+            position: absolute;
+            top: 50%;
+            left: 100px;
+            width: 300px;
             text-align: left;
-            border-bottom: 2px solid #ddd;  /* 表头下方的分割线 */
+            color: #eee;
+            transform: translate(0, -50%);
+            font-family: system-ui;
+            display: none;
         }
 
-        /* 表格单元格样式 */
-        td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;  /* 单元格下方的分割线 */
+        .slide .item:nth-child(2) .content {
+            display: block;
         }
 
-        /* 图片样式 */
-        img {
-            width: 100px;  /* 图片宽度 */
-            height: auto;  /* 自适应高度 */
-            border-radius: 5px;  /* 图片圆角 */
+        .content .name {
+            font-size: 40px;
+            text-transform: uppercase;
+            font-weight: bold;
+            opacity: 0;
+            animation: animate 1s ease-in-out 1 forwards;
         }
 
-        /* 表格悬停效果 */
-        tr:hover {
-            background-color: #f1f1f1;  /* 鼠标悬停时的背景颜色 */
-        }
-
-        /* 表格标题 */
-        .table-title {
-            text-align: center;
-            font-size: 24px;
-            color: #4CAF50;
+        .content .des {
+            margin-top: 10px;
             margin-bottom: 20px;
+            opacity: 0;
+            animation: animate 1s ease-in-out 0.3s 1 forwards;
+        }
+
+        .content button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0;
+            animation: animate 1s ease-in-out 0.6s 1 forwards;
+        }
+
+        @keyframes animate {
+            from {
+                opacity: 0;
+                transform: translate(0, 100px);
+                filter: blur(33px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(0);
+                filter: blur(0);
+            }
+        }
+
+        .button {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 20px;
+        }
+
+        .button button {
+            width: 40px;
+            height: 35px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            margin: 0 5px;
+            border: 1px solid #000;
+            transition: 0.3s;
+        }
+
+        .button button:hover {
+            background: #ababab;
+            color: #fff;
         }
     </style>
 </head>
+
 <body>
+<div class="container">
+    <div class="slide">
+        <div class="item" style="background-image: url(../static/广州image/map/中山.jpg);">
+            <div class="content">
+                <div class="name">Sun Yat-sen Memorial Hall</div>
+                <div class="des">Dedicated to the founding father of the Republic of China, Sun Yat-sen, this memorial hall is not only a site of historical significance but also a cultural venue. It hosts various exhibitions and performances. The octagonal building, with its traditional blue and gold tiled roof, stands as a prominent landmark in Guangzhou.</div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../static/广州image/map/军校.jpg);">
+            <div class="content">
+                <div class="name">Huangpu Military Academy</div>
+                <div class="des">The Huangpu Military Academy is an iconic historical site in Guangzhou, known for its role in modern Chinese history. Founded in 1924 by Sun Yat-sen with Soviet assistance, it was established to unify and modernize China's military forces. As a cradle of revolutionary leadership, it educated many of China's top military and political leaders. Today, the academy serves as a museum, offering insights into its profound impact on China's development.</div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../static/广州image/map/剧院.jpg);">
+            <div class="content">
+                <div class="name">Guangzhou Opera House</div>
+                <div>Designed by the famous architect Zaha Hadid, the Guangzhou Opera House is a masterpiece of modern design and architecture. The building resembles two pebbles on the bank of the Pearl River and hosts world-class performances ranging from operas to ballets and concerts.</div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../static/广州image/map/博物馆.jpg);">
+            <div class="content">
+                <div class="name"> Guangdong Museum</div>
+                <div class="des">This state-of-the-art museum provides insights into the history, arts, and culture of Guangdong province. Its modern architecture is a visual treat, and the collections inside include artifacts from ancient times to modern history, making it a must-visit for history buffs.</div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../static/广州image/map/夜游.jpg);">
+            <div class="content">
+                <div class="name">Pearl River Night Cruise</div>
+                <div class="des">The Pearl River Night Cruise offers a spectacular way to experience the beauty of Guangzhou at night. As the third-longest river in China, the Pearl River cuts through the heart of Guangzhou, and the night cruise highlights the city's dazzling skyline. Tourists can enjoy views of illuminated landmarks such as the Canton Tower, the Guangzhou Opera House, and the beautifully lit bridges that span the river. The cruise provides a serene and picturesque setting, ideal for photography enthusiasts and anyone looking to enjoy a relaxing evening with panoramic views of the city's lights.</div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../static/广州image/map/广州塔.jpg);">
+            <div class="content">
+                <div class="name">Canton Tower</div>
+                <div class="des">Known as the Guangzhou TV Astronomical and Sightseeing Tower, the Canton Tower stands at 600 meters, making it one of the tallest towers in the world. It offers panoramic views of the city and features a skywalk, an observation deck, and a rotating restaurant, providing visitors with a unique and thrilling experience of Guangzhou.</div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../static/广州image/map/教堂.jpg);">
+            <div class="content">
+                <div class="name">Sacred Heart Cathedral</div>
+                <div class="des">Also known as the Stone House by locals, the Sacred Heart Cathedral is one of the few churches in the world to be entirely built of granite. With its Gothic Revival architecture, it is an important religious site in Guangzhou and attracts many visitors interested in its history and architecture. These attractions highlight Guangzhou's rich blend of cultural heritage, modern development, and natural beauty, making it a fascinating city for travelers.</div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../static/广州image/map/白云山.jpg);">
+            <div class="content">
+                <div class="name">Baiyun Mountain</div>
+                <div class="des">Baiyun Mountain is renowned for its natural beauty and offers a perfect escape into nature. The "White Cloud Mountain" provides various recreational activities like hiking, bird-watching, and cable-car rides. Its summit offers stunning views of the entire city enveloped in lush greenery.</div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../static/广州image/map/石门.jpg);">
+            <div class="content">
+                <div class="name">Shimen National Forest Park</div>
+                <div class="des">Shimen National Forest Park is located in the northern part of Guangzhou and is celebrated for its pristine natural landscapes and rich biodiversity. The park covers a vast area, offering a peaceful retreat with lush forests, clear streams, and scenic hiking trails. It is particularly famous for its picturesque waterfalls and the Shimen Reservoir, which is the largest man-made lake in Guangzhou. Visitors to the park can engage in activities such as hiking, bird-watching, and picnicking, making it an ideal destination for nature lovers and families looking for an escape into the wilderness.</div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../static/广州image/map/越秀.jpg);">
+            <div class="content">
+                <div class="name">Yuexiu Park</div>
+                <div class="des">Yuexiu Park, located at the heart of Guangzhou, is the largest park in the city and a staple of cultural heritage and natural beauty. This park is not only a green oasis amidst the urban landscape but also home to several historical relics, including the iconic Five Rams Sculpture, which is symbolic of Guangzhou. The park's grounds feature a combination of rolling hills, serene lakes, and vibrant gardens along with landmarks like the ancient Zhenhai Tower and the Guangzhou Museum. Yuexiu Park is a popular destination for both locals and tourists seeking a tranquil escape and a dose of Guangzhou's rich history and culture.</div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../static/广州image/map/长隆.jpg);">
+            <div class="content">
+                <div class="name">Chimelong Paradise</div>
+                <div class="des">Chimelong Paradise is a premier amusement park located in Guangzhou, known for its vast array of high-thrill rides and extensive family entertainment. It is part of the larger Chimelong Tourist Resort, which includes a water park, safari park, and a circus. Chimelong Paradise itself boasts some of the world's top roller coasters, including the Dive Coaster and the 10 Inversion Roller Coaster. The park also offers spectacular shows, themed zones, and a wide variety of attractions suitable for all ages. It's a must-visit for families and thrill-seekers alike, providing a full day of fun and excitement.</div>
+                <button>See More</button>
+            </div>
+        </div>
+    </div>
 
-<!-- 表格标题 -->
-<div class="table-title">广州风景名胜</div>
+    <div class="button">
+        <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+</div>
 
-<!-- 风景名胜表格 -->
-<table>
-    <thead>
-    <tr>
-        <th>地名</th>
-        <th>图片</th>
-        <th>简介</th>
-        <th>历史文化</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td><a href="https://maps.google.com/?q=白云山,广州" target="_blank">白云山</a></td>  <!-- 链接到Google Maps -->
-        <td><img src="static/广州image/白云山.jpg" alt="白云山"></td>
-        <td>白云山位于广州，是登山健身和观光的好去处，拥有丰富的自然景观。</td>
-        <td>白云山有着悠久的历史，被誉为"羊城第一秀"，是广州的标志性景点之一。</td>
-    </tr>
-    <tr>
-        <td><a href="https://maps.google.com/?q=广州塔,广州" target="_blank">广州塔</a></td>  <!-- 链接到Google Maps -->
-        <td><img src="static/广州image/广州塔.jpg" alt="广州塔"></td>
-        <td>广州塔是广州的地标之一，塔高600多米，是一个集娱乐和观光于一体的旅游胜地。</td>
-        <td>广州塔又称“小蛮腰”，建于21世纪初，象征着现代广州的崛起与发展。</td>
-    </tr>
-    <tr>
-        <td><a href="https://maps.google.com/?q=沙面,广州" target="_blank">沙面</a></td>  <!-- 链接到Google Maps -->
-        <td><img src="static/广州image/沙面.jpg" alt="沙面"></td>
-        <td>沙面是广州的历史文化街区，拥有大量欧洲风格的建筑，是拍照和休闲的好地方。</td>
-        <td>沙面曾是广州的租界区，保留了许多19世纪的欧式建筑，见证了广州的历史演变。</td>
-    </tr>
-    <tr>
-        <td><a href="https://maps.google.com/?q=中山纪念堂,广州" target="_blank">中山纪念堂</a></td>  <!-- 链接到Google Maps -->
-        <td><img src="../static/广州image/中山纪念堂.jpg" alt="中山纪念堂"></td>
-        <td>中山纪念堂是为了纪念孙中山而建，是广州的重要历史景点之一。</td>
-        <td>中山纪念堂建于1930年代，象征着中国近代历史的重要人物孙中山的伟大贡献。</td>
-    </tr>
-    </tbody>
-</table>
+<script>
+    let next = document.querySelector('.next');
+    let prev = document.querySelector('.prev');
+
+    next.addEventListener('click', function () {
+        let items = document.querySelectorAll('.item');
+        document.querySelector('.slide').appendChild(items[0]);
+    });
+
+    prev.addEventListener('click', function () {
+        let items = document.querySelectorAll('.item');
+        let slide = document.querySelector('.slide');
+        slide.insertBefore(items[items.length - 1], slide.firstChild);
+    });
+</script>
+
 
 </body>
+
 </html>
