@@ -17,9 +17,8 @@
          button.style.top = `${y}px`;
          button.title = `X: ${x.toFixed(0)}, Y: ${y.toFixed(0)}`; // Tooltip showing coordinates
          this.appendChild(button);
-
-         // Display coordinates in the coordinates div
-         document.getElementById('coordinates').textContent = `Last click at X: ${x.toFixed(0)}, Y: ${y.toFixed(0)}`;
+         document.getElementById('coordinates').textContent = `Last click at X: ${
+         // Display coordinates in the coordinates divx.toFixed(0)}, Y: ${y.toFixed(0)}`;
      });
  </script>
  </body>
