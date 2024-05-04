@@ -1,0 +1,64 @@
+
+<!--//把自己的图片放进src里进行测试即可//-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Map of Guangzhou</title>
+    <style>
+        body {
+            display: grid;
+            place-items: center; /* Centering the content in the viewport */
+            height: 100vh;
+            margin: 0; /* Removing default margin */
+        }
+        #mapContainer {
+            position: relative;
+            width: 823.43px; /* Specific width of your image */
+            height: 1600px; /* Specific height of your image */
+            overflow: hidden; /* Prevents any overflows */
+        }
+        #mapContainer img {
+            width: 100%;
+            height: 100%;
+        }
+        .map-button {
+            position: absolute;
+            width: 20px; /* Button size */
+            height: 20px;
+            background-color: rgba(255, 0, 0, 0.5); /* Semi-transparent red for visibility */
+            border-radius: 50%; /* Making the buttons circular */
+            cursor: pointer; /* Cursor indicates clickable item */
+        }
+    </style>
+</head>
+<body>
+<div id="mapContainer">
+    <img src="static/HongKong/HKmap/hongkongmap.JPG" alt="Interactive Map of Guangzhou" id="interactiveMap">
+</div>
+
+<script>
+    document.getElementById('interactiveMap').addEventListener('click', function(event) {
+        const rect = this.getBoundingClientRect();
+        const x = event.clientX - rect.left; // Calculating X coordinate relative to the image
+        const y = event.clientY - rect.top; // Calculating Y coordinate relative to the image
+
+        // Create a new button element
+        const button = document.createElement('a');
+        button.className = 'map-button';
+        button.style.left = `${x - 10}px`; // Center the button on the click position
+        button.style.top = `${y - 10}px`;
+        button.href = "#"; // Set a default or dynamic href
+        button.onclick = function() {
+            alert(`Button at X: ${x.toFixed(2)}, Y: ${y.toFixed(2)}`); // Example action
+        };
+
+        document.getElementById('mapContainer').appendChild(button); // Add the button to the container
+    });
+</script>
+</body>
+</html>
+
