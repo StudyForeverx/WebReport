@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Map of Guangzhou</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* 从顶部开始显示，而不是居中 */
+            min-height: 100vh; /* 确保至少有视口的高度 */
+            margin: 0; /* 移除默认的边距 */
+            overflow: auto; /* 允许滚动以查看全部内容 */
+        }
+
+        #mapContainer {
+            position: relative;
+            width: 823.43px; /* 根据实际图片宽度调整 */
+            height: 1600px; /* 根据实际图片高度调整 */
+            overflow: hidden; /* Prevents any overflows */
+        }
+
+        #mapContainer img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .map-button {
+            position: absolute;
+            width: 20px; /* 按钮大小 */
+            height: 20px;
+            background-color: rgba(255, 0, 0, 0.5); /* 半透明红色，增加可见性 */
+            border-radius: 50%; /* 圆形按钮 */
+            cursor: pointer; /* 按钮鼠标样式 */
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="mapContainer">
+    <img src="../static/HongKong/HKmap/hongkongmap.JPG" alt="Interactive Map of Guangzhou">
+    <div class="map-button" style="top: 426.57px; left: 503.57px;"></div>
+    <div class="map-button" style="top: 929.29px; left: 357.57px;"></div>
+    <div class="map-button" style="top: 1251.86px; left: 157.57px;"></div>
+    <div class="map-button" style="top: 1198.86px; left: 392.57px;"></div>
+    <div class="map-button" style="top: 1158.86px; left: 487.57px;"></div>
+    <div class="map-button" style="top: 1116.00px; left: 556.57px;"></div>
+    <div class="map-button" style="top: 1167.86px; left: 658.57px;"></div>
+    <div class="map-button" style="top: 1374.86px; left: 493.57px;"></div>
+    <div class="map-button" style="top: 911.29px; left: 448.57px;"></div>
+</div>
+</body>
+</html>
