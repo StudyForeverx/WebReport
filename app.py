@@ -47,8 +47,8 @@ def goguangzhoufengjing():
 @app.route('/guangzhou/gz-meishi', methods=['GET'])
 def goguangzhoumeihshi():
     return render_template('gz-meishi.html')
-@app.route('/guangzhou/gz-fengjing/guangzhou-map', methods=['GET'])
-def goguangzhoufengjingmap():
+@app.route('/guangzhou/guangzhou-map', methods=['GET'])
+def goguangzhoumap():
     return render_template('guangzhou-map.html')
 
 @app.route('/hongkong', methods=['GET'])

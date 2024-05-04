@@ -1,0 +1,42 @@
+<body>
+ <div id="mapContainer">
+     <img src="../static/广州image/map/MAP.jpg" alt="Interactive Map of Guangzhou" id="interactiveMap">
+     <div id="coordinates">Coordinates will appear here</div>
+ </div>
+
+ <script>
+     document.getElementById('interactiveMap').addEventListener('click', function(event) {
+         const rect = this.getBoundingClientRect();
+         const x = event.clientX - rect.left; // X coordinate relative to the image
+         const y = event.clientY - rect.top; // Y coordinate relative to the image
+
+         // Create a new button at the click position
+         const button = document.createElement('div');
+         button.className = 'map-button';
+         button.style.left = `${x}px`;
+         button.style.top = `${y}px`;
+         button.title = `X: ${x.toFixed(0)}, Y: ${y.toFixed(0)}`; // Tooltip showing coordinates
+         this.appendChild(button);
+
+         // Display coordinates in the coordinates div
+         document.getElementById('coordinates').textContent = `Last click at X: ${x.toFixed(0)}, Y: ${y.toFixed(0)}`;
+     });
+ </script>
+ </body>
+//先把图的定位定好之后再去点击，别回头点完了图的位置不对!!!!!
+<body>
+<div id="mapContainer">
+    <img src="/static/广州image/map/MAP.jpg" alt="Interactive Map of Guangzhou">
+    <a href="https://zh.wikipedia.org/wiki/%E7%99%BD%E4%BA%91%E5%B1%B1_(%E5%B9%BF%E5%B7%9E%E5%B8%82)" class="map-button" style="top: 306px; left: 653px;"></a>
+    <a href="https://zh.wikipedia.org/wiki/%E7%9F%B3%E9%97%A8%E5%9B%BD%E5%AE%B6%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD" class="map-button" style="top: 332px; left: 1015px;"></a>
+    <a href="https://zh.wikipedia.org/wiki/%E8%B6%8A%E7%A7%80%E5%B1%B1" class="map-button" style="top: 604px; left: 383px;"></a>
+    <a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%B1%B1%E7%BA%AA%E5%BF%B5%E5%A0%82_(%E5%B9%BF%E5%B7%9E)" class="map-button" style="top: 576px; left: 691px;"></a>
+    <a href="https://zh.wikipedia.org/wiki/%E7%9F%B3%E5%AE%A4%E5%9C%A3%E5%BF%83%E5%A4%A7%E6%95%99%E5%A0%82" class="map-button" style="top: 907px; left: 179px;"></a>
+    <a href="https://zh.wikipedia.org/wiki/%E5%B9%BF%E5%B7%9E%E5%A1%94" class="map-button" style="top: 1003px; left: 472px;"></a>
+    <a href="https://zh.wikipedia.org/wiki/%E5%B9%BF%E5%B7%9E%E5%A4%A7%E5%89%A7%E9%99%A2" class="map-button" style="top: 776px; left: 687px;"></a>
+    <a href="https://zh.wikipedia.org/wiki/%E7%8F%A0%E6%B1%9F" class="map-button" style="top: 1145px; left: 323px;"></a>
+    <a href="https://zh.wikipedia.org/wiki/%E9%BB%84%E5%9F%94%E5%86%9B%E6%A0%A1%E6%97%A7%E5%9D%80" class="map-button" style="top: 1223px; left: 652px;"></a>
+    <a href="https://zh.wikipedia.org/wiki/%E5%B9%BF%E4%B8%9C%E7%9C%81%E5%8D%9A%E7%89%A9%E9%A6%86" class="map-button" style="top: 993px; left: 849px;"></a>
+    <a href="https://zh.wikipedia.org/wiki/%E9%95%BF%E9%9A%86%E6%AC%A2%E4%B9%90%E4%B8%96%E7%95%8C" class="map-button" style="top: 1512px; left: 719px;"></a>
+</div>
+</body>
