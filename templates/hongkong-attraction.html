@@ -52,23 +52,20 @@
         }
 
 
-        .slide .item:nth-child(3) {
-            left: 50%;
+               .slide .item:nth-child(3) {
+            left: calc(50% + 220px); /* 位于第二张图片之后 */
         }
 
         .slide .item:nth-child(4) {
-            left: calc(50% + 220px);
+            left: calc(50% + 440px); /* 位于第三张图片之后 */
         }
 
-        .slide .item:nth-child(5) {
-            left: calc(50% + 440px);
-        }
-
-        /* here n = 0, 1, 2, 3,... */
-        .slide .item:nth-child(n + 6) {
-            left: calc(50% + 660px);
+        /* 调整后续 `.item` 的起始位置和透明度 */
+        .slide .item:nth-child(n + 5) {
+            left: calc(50% + 660px); /* 从第四张图片之后开始 */
             opacity: 0;
         }
+
 
 
 
