@@ -63,5 +63,9 @@ def goHongKongAttraction():
 def goHongKongFood():
     return render_template('hongkong-food.html')
 
+@app.route('/hongkong/hkmap-test', methods=['GET'])
+def goHKmap():
+    return render_template('hkmap-test.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
