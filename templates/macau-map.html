@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Map of Guangzhou</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* 从顶部开始显示，而不是居中 */
+            min-height: 100vh; /* 确保至少有视口的高度 */
+            margin: 0; /* 移除默认的边距 */
+            overflow: auto; /* 允许滚动以查看全部内容 */
+        }
+
+        #mapContainer {
+            position: relative;
+            width: 823.43px; /* 根据实际图片宽度调整 */
+            height: 1600px; /* 根据实际图片高度调整 */
+            overflow: hidden; /* Prevents any overflows */
+        }
+
+        #mapContainer img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .map-button {
+            position: absolute;
+            width: 20px; /* 按钮大小 */
+            height: 20px;
+            background-color: rgba(255, 0, 0, 0.5); /* 半透明红色，增加可见性 */
+            border-radius: 50%; /* 圆形按钮 */
+            cursor: pointer; /* 按钮鼠标样式 */
+        }
+
+    </style>
+</head>
+<body>
+<div id="mapContainer">
+    <img alt="Interactive Map of macau" src="/static/澳门image/map/MAP.png">
+    <a class="map-button" href="https://zh.wikipedia.org/wiki/%E5%A4%A7%E4%B8%89%E5%B7%B4%E7%89%8C%E5%9D%8A"
+       style="top: 775.33px; left: 385.72px;"></a>
+    <a class="map-button"
+       href="https://zh.wikipedia.org/wiki/%E6%BC%81%E4%BA%BA%E7%A2%BC%E9%A0%AD"
+       style="top: 969.33px; left: 603.72px;"></a>
+    <a class="map-button" href="https://zh.wikipedia.org/wiki/%E6%BC%81%E4%BA%BA%E7%A2%BC%E9%A0%AD"
+       style="top: 969.33px; left: 603.72px;"></a>
+    <a class="map-button"
+       href="https://zh.wikipedia.org/wiki/%E6%BE%B3%E9%96%80%E6%97%85%E9%81%8A%E5%A1%94%E6%9C%83%E5%B1%95%E5%A8%9B%E6%A8%82%E4%B8%AD%E5%BF%83"
+       style="top:  1491.67px; left: 316.72px;"></a>
+    <a class="map-button"
+       href="https://zh.wikipedia.org/wiki/%E7%8E%AB%E7%91%B0%E8%81%96%E6%AF%8D%E5%A0%82_(%E6%BE%B3%E9%96%80)"
+       style="top: 937.33px; left:  420.72px;"></a>
+    <a class="map-button" href="https://zh.wikipedia.org/wiki/%E5%AE%98%E4%B9%9F%E8%A1%97"
+       style="top: 310.00px; left: 513.72px;"></a>
+    <a class="map-button"
+       href="https://zh.wikipedia.org/wiki/%E9%BE%8D%E7%92%B0%E8%91%A1%E9%9F%BB%E4%BD%8F%E5%AE%85%E5%BC%8F%E5%8D%9A%E7%89%A9%E9%A4%A8"
+       style="top: 366.72px; left: 572.00px;"></a>
+    <a class="map-button" href="https://zh.wikipedia.org/wiki/%E5%AA%BD%E7%A5%96%E9%96%A3"
+       style="top: 211.72px; left: 1240.67px;"></a>
+    <a class="map-button" href="https://zh.wikipedia.org/wiki/%E8%B7%AF%E7%92%B0"
+       style="top: 1045.29px; left: 422.57px;"></a>
+    <a class="map-button" href="https://zh.wikipedia.org/wiki/%E6%9D%B1%E6%9C%9B%E6%B4%8B%E7%82%AE%E5%8F%B0"
+       style="top: 848.29px; left: 548.57px;"></a>
+    <a class="map-button" href="https://zh.wikipedia.org/wiki/%E5%A4%A7%E6%BD%AD%E5%B1%B1"
+       style="top: 1294.86px; left: 454.57px;"></a>
+</div>
+</body>
+
+</html>

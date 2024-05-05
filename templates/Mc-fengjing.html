@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          referrerpolicy="no-referrer" rel="stylesheet"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #eaeaea;
+            overflow: hidden;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1000px;
+            height: 600px;
+            background: #f5f5f5;
+            box-shadow: 0 30px 50px #dbdbdb;
+        }
+
+        .container .slide .item {
+            width: 200px;
+            height: 300px;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            box-shadow: 0 3px 5px #505050;
+            background-position: 50% 50%;
+            background-size: cover;
+            display: inline-block;
+            transition: 0.5s;
+        }
+
+        .slide .item:nth-child(1) {
+            top: 0;
+            left: 0;
+            transform: translate(0, 0);
+            border-radius: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .item .content {
+            position: absolute;
+            top: 50%;
+            left: 300px;
+            width: 300px;
+            text-align: left;
+            color: #eee;
+            transform: translate(0, -50%);
+            font-family: system-ui;
+            display: none;
+        }
+
+        .slide .item:nth-child(2) .content {
+            display: block;
+        }
+
+        .content .name {
+            font-size: 40px;
+            text-transform: uppercase;
+            font-weight: bold;
+            opacity: 0;
+            animation: animate 1s ease-in-out 1 forwards;
+        }
+
+        .content .des {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: animate 1s ease-in-out 0.3s 1 forwards;
+        }
+
+        .content button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0;
+            animation: animate 1s ease-in-out 0.6s 1 forwards;
+        }
+
+        @keyframes animate {
+            from {
+                opacity: 0;
+                transform: translate(0, 100px);
+                filter: blur(33px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(0);
+                filter: blur(0);
+            }
+        }
+
+        .button {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 20px;
+        }
+
+        .button button {
+            width: 40px;
+            height: 35px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            margin: 0 5px;
+            border: 1px solid #000;
+            transition: 0.3s;
+        }
+
+        .button button:hover {
+            background: #ababab;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="slide">
+        <div class="item" style="background-image: url(../static/澳门image/map/大三巴.jpg);">
+            <div class="content">
+                <div class="name">Ruins of St. Paul's</div>
+                <div class="des">The predecessor of the Ruins of St. Paul's is St. Paul's Church, which is an affiliated
+                    part of St. Paul's College founded by the Jesuits in Macau. In Catholicism, St. Paul is described as
+                    one of the greatest missionaries. He went out for missionary activities three times and traveled to
+                    places such as the Mediterranean and the Italian Peninsula. The college is named after him, which
+                    means that the Jesuits went to the East to preach. Carrying on the work of St. Paul[8]. The Chinese
+                    name "Samba" comes from the Chinese transliteration of the Portuguese "São Paulo" of St. Paul; in
+                    addition, in order to distinguish it from the church of St. Joseph's Seminary, a branch of St.
+                    Paul's College, it is also named after the former. Its scale is larger than the latter, so the
+                    Chinese call St. Paul's Church "Big St. Paul's" and St. Joseph's Seminary "Little St. Paul's" or
+                    "Samba Tsai".
+                    In 1835, a fire destroyed St. Paul's College and the church. The front wall of the church, most of
+                    the foundation, and the 68 stone steps in front of the church remain. Because the locals believed
+                    that the front wall of the church resembled a traditional Chinese archway, they were removed. Known
+                    as the "Ruins of St. Paul's"
+                </div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../static/澳门image/map/旅游塔.jpg);">
+            <div class="content">
+                <div class="name">Macau Tower Convention</div>
+                <div class="des">A building that integrates sightseeing, conference, exhibition and entertainment
+                    facilities in the new reclamation area of Macau's Nanwan and the Pearl River Estuary. It is one of
+                    Macau's famous landmarks; it is also the 6th independent observation tower in China and the 21st
+                    independent observation tower in the world. . The Macau Tower was built in 1998 and completed and
+                    opened in 2001.
+                </div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../static/澳门image/map/渔人码头.jpg);">
+            <div class="content">
+                <div class="name">Macau Fisherman's Wharf</div>
+                <div>It is Macau's first themed cultural, creative, entertainment and tourism complex, equipped with a
+                    shopping mall modeled after Fisherman's Wharf in Europe and the United States. Macau Fisherman's
+                    Wharf was built opposite the new reclamation area of the outer harbor and adjacent to the new Hong
+                    Kong and Macau Ferry Terminal. It was invested and built by Stanley Ho and Chow Kam Fai with a total
+                    investment of approximately MOP 1.85 billion. It took 5 years of preparation and construction. The
+                    opening ceremony and trial operation were held on December 31, 2005 by Macau Chief Executive Edmund
+                    Ho Hau Wah and Fisherman's Wharf Chairman Stanley Ho. It was officially opened on December 23, 2006
+                    after one year of trial operation. It was formerly the old Macau Hong Kong and Macau Ferry Terminal.
+                </div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../static/澳门image/map/议事厅前地.jpeg);">
+            <div class="content">
+                <div class="name">In front of the Macao Assembly Hall</div>
+                <div class="des">Commonly known as the "Fountain", it is a square in Macau. It is located in the central
+                    area of the Macau Peninsula. It covers an area of 3,700 square meters and is one of the four major
+                    squares in Macau. In 2005, it was included in the World Cultural Heritage List as part of the
+                    Historic Center of Macau. Senado Square is connected to Banzhang Hall Square to the north and Xinma
+                    Road to the south. It is wide in the south and narrow in the north, forming a long and narrow
+                    triangle. It is a lively commercial and cultural activity area.
+                </div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../static/澳门image/map/玫瑰堂.jpg);">
+            <div class="content">
+                <div class="name">Our Lady of the Rosary Church</div>
+                <div class="des">t was built in 1587 by the Spanish Santo Dominican Order, with Our Lady of the Rosary
+                    as its patron. The following year it was taken over by the Portuguese priests of the order. Because
+                    it was originally built only with wooden boards, it was called "Ban Zhang Hall" by the Chinese. It
+                    was not until the 17th century that it was changed to a masonry structure. It was destroyed by fire
+                    in 1874 and was rebuilt to its present size.
+                </div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../static/澳门image/map/官也街.jpeg);">
+            <div class="content">
+                <div class="name">Guan-ye Street, Macau</div>
+                <div class="des">Located in the center of Taipa, Macau; 150 meters long and 5 meters wide.It intersects
+                    with Rua Direita Carlos Eugénio and Rua Correia da Silva in a T shape to the south, and forms a T
+                    shape with Rua do Regedor and the fire station in the north. Intersection is one of the new famous
+                    attractions in Macau, attracting countless tourists every year.The origin of Guan-ye Street is to
+                    commemorate the 81st Governor-General of Macau.
+                </div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../static/澳门image/map/妈祖阁.jpg);">
+            <div class="content">
+                <div class="name">Macau Ma-zu Pavilion</div>
+                <div class="des">Mazu Pavilion (Portuguese: Templo de A-Má), commonly known as A-Má Temple (Cantonese
+                    Pinyin: ma5 gok3 miu6, "Ma" is changed to "horse" , Portuguese: Pagode da Barra), formerly known as
+                    the Empress Temple , Haijue Temple and Tianfei Temple are a temple located on the hillside of A-Ma
+                    Mountain in the southwest of the Macau Peninsula that mainly worships the sea god Mazu. It was
+                    founded about 1553 to 1557 years ago and is one of the landmark buildings in Macau. , together with
+                    Lin Feng Temple and Puji Temple, are the three major ancient temples in Macau, and it is also the
+                    oldest temple among them.
+                </div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../static/澳门image/map/龙环葡韵.jpg);">
+            <div class="content">
+                <div class="name">Longhuan Puyun Residential Museum</div>
+                <div class="des">Longhuan Puyun Residential Museum (Portuguese: Casas-Museu da Taipa), referred to as
+                    Longhuan Puyun in Chinese. Located on the seaside road in Taipa, Macau. It is a museum based on five
+                    Portuguese-style houses on the seaside road. It is also one of Macau's popular tourist attractions
+                </div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../static/澳门image/map/路环岛.jpg);">
+            <div class="content">
+                <div class="name">Shimen National Forest Park</div>
+                <div class="des">Shimen National Forest Park is located in the northern part of Guangzhou and is
+                    celebrated for its pristine natural landscapes and rich biodiversity. The park covers a vast area,
+                    offering a peaceful retreat with lush forests, clear streams, and scenic hiking trails. It is
+                    particularly famous for its picturesque waterfalls and the Shimen Reservoir, which is the largest
+                    man-made lake in Guangzhou. Visitors to the park can engage in activities such as hiking,
+                    bird-watching, and picnicking, making it an ideal destination for nature lovers and families looking
+                    for an escape into the wilderness.
+                </div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../static/澳门image/map/东望洋炮台.jpg);">
+            <div class="content">
+                <div class="name">Coloane</div>
+                <div class="des">Coloane (Portuguese: Coloane) was formerly known as Yan Bay, Yan Zao Bay, Jiu'ao Island
+                    or Apowei. It was named after Jiu'ao Bay in the northeast corner and Jiu'ao Mountain on the island.
+                    In addition, some people believe that the Portuguese name of Coloane is a transliteration of the
+                    island's ancient Cantonese name "Kuaoluwan". It is now a place in Macau and one of the four major
+                    parts (regions) that make up Macau. Since most of the island has not yet been developed, with rich
+                    vegetation and beautiful scenery, Coloane is known as Macau's last back garden. The area above the
+                    halfway point of Dieshitang Mountain, the highest peak on Coloane Island, is designated as a country
+                    park and Mazu Cultural Village and is strictly protected.
+                </div>
+                <button>See More</button>
+            </div>
+        </div>
+        <div class="item" style="background-image: url(../static/澳门image/map/大潭山.jpg);">
+            <div class="content">
+                <div class="name">Taipa Grande</div>
+                <div class="des">Taipa Grande (Portuguese: Taipa Grande), also known as Taipa, Taipa Mountain and
+                    Chicken Neck Mountain. Located in Taipa, Macau, with an altitude of 160.4 meters, it is the highest
+                    point of Taipa Island.
+                </div>
+                <button>See More</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="button">
+        <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+        <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+</div>
+
+<script>
+    let next = document.querySelector('.next');
+    let prev = document.querySelector('.prev');
+
+    next.addEventListener('click', function () {
+        let items = document.querySelectorAll('.item');
+        document.querySelector('.slide').appendChild(items[0]);
+    });
+
+    prev.addEventListener('click', function () {
+        let items = document.querySelectorAll('.item');
+        let slide = document.querySelector('.slide');
+        slide.insertBefore(items[items.length - 1], slide.firstChild);
+    });
+</script>
+
+
+</body>
+
+</html>
