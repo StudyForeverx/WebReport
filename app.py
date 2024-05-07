@@ -61,7 +61,7 @@ def goHKmap():
 
 
 @app.route('/Macau', methods=['GET'])
-def goguangzhou():
+def gomacau():
     return render_template('Macau.html')
 
 
