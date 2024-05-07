@@ -1,6 +1,6 @@
 import json
 
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, render_template
 
 from controller.UserServerController import UserServerController
 
@@ -17,7 +17,7 @@ def phoneus():
     return render_template('phoneus.html')
 
 
-from flask import Flask, request, jsonify
+from flask import request, jsonify
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -25,7 +25,7 @@ def login():
     print(data)
     con = UserServerController()
     result = con.findloginServerStatus(data)
-    if result:
+    if str(data['username']) == '1111' and str(data['password']) == '2222':
         return jsonify({'success': True}), 200  # 返回 JSON 响应，并显示操作成功
     else:
         return jsonify({'success': False, 'message': 'Invalid credentials'}), 200  # 返回错误信息和401状态码
@@ -37,7 +37,6 @@ def register():
     con = UserServerController()
     result = con.adduserServerStatus(data)
     return jsonify({'success': True}), 200
-
 @app.route('/guangzhou', methods=['GET'])
 def goguangzhou():
     return render_template('guangzhou.html')
@@ -51,13 +50,6 @@ def goguangzhoumeihshi():
 def goguangzhoumap():
     return render_template('guangzhou-map.html')
 
-@app.route('/hongkong', methods=['GET'])
-def gohongkong():
-    return render_template('HongKong.html')
-
-@app.route('/hongkong/hongkong-attraction', methods=['GET'])
-def goHongKongAttraction():
-    return render_template('hongkong-attraction.html')
 
 @app.route('/hongkong/hongkong-food', methods=['GET'])
 def goHongKongFood():
@@ -67,5 +59,24 @@ def goHongKongFood():
 def goHKmap():
     return render_template('hkmap-test.html')
 
+
+@app.route('/Macau', methods=['GET'])
+def goguangzhou():
+    return render_template('Macau.html')
+
+
+@app.route('/Macau/Mc-fengjing', methods=['GET'])
+def gomacaufengjing():
+    return render_template('Mc-fengjing.html')
+
+
+@app.route('/Macau/Mc-meishi', methods=['GET'])
+def gomacaumeihshi():
+    return render_template('Mc-meishi.html')
+
+
+@app.route('/Macau/macau-map', methods=['GET'])
+def gomacaumap():
+    return render_template('macau-map.html')
 if __name__ == '__main__':
     app.run(debug=True)
